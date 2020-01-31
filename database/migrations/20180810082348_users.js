@@ -1,4 +1,4 @@
-exports.up = function(knex) {
+ernameexports.up = function(knex) {
   return knex.schema.createTable('users', users => {
     users.increments();
 

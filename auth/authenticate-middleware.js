@@ -6,3 +6,16 @@
 module.exports = (req, res, next) => {
   res.status(401).json({ you: 'shall not pass!' });
 };
+
+
+
+
+// module.exports = function restricted(req, res, next) {
+//   const { user_name, password } = req.headers;
+
+//   if (req.session && req.session.user) {
+//     next();
+//   } else {
+//     res.status(401).json({ message: "You are not authorized " });
+//   }
+// };
