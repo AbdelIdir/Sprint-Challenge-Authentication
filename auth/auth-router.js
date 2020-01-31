@@ -31,8 +31,8 @@ router.post("/login", (req, res) => {
     .then(user => {
       // console.log(user);
       if (user && bcrypt.compareSync(password, user.password)) {
-        req.session.loggedUser= user;
-        console.log("SESSION LOGGED",req.session.loggedUser)
+        req.session.loggedUser = user;
+        console.log("SESSION LOGGED", req.session.loggedUser);
         res.status(200).json({
           message: `Welcome to my website ${user.username},id: ${user.id}`
         });
@@ -46,8 +46,6 @@ router.post("/login", (req, res) => {
     });
 });
 
-
-
 router.get("/logout", (req, res) => {
   if (req.session) {
     return req.session.destroy(err => {
@@ -55,7 +53,7 @@ router.get("/logout", (req, res) => {
         res.json({ message: "you have not logged out properly" });
       } else {
         res.status(200).json({ message: "you have successfully logged out" });
-        console.log(req.session)
+        console.log(req.session);
       }
     });
   } else {
